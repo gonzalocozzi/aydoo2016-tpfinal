@@ -15,4 +15,10 @@ describe 'Estrella' do
     expect(estrella.masa).to eq 45
   end
 
+  it 'should contener un asteroide en un mapa desde su creacion' do
+    estrella = Estrella.new 100, 45
+
+    expect(estrella.efectos.key?(Asteroide)).to eq true
+  end
+
 end
