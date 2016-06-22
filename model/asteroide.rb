@@ -7,7 +7,8 @@ class Asteroide
     @vida = vida
     @masa = masa
     @efectos = Hash.new
-    @efectos[Nave] = 0  
+    @efectos[Nave] = 0
+    @efectos[Bomba] = 0
   end
 
 end
