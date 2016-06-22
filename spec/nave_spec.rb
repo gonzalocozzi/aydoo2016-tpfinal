@@ -45,4 +45,10 @@ describe 'Nave' do
     expect(nave.efectos.key?(Nave)).to eq true
   end
 
+  it 'should no estar viva si su vida es nula' do
+    nave = Nave.new 0, 20
+
+    expect(nave.esta_vivo).to eq false
+  end
+
 end
