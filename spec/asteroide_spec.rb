@@ -45,4 +45,10 @@ describe 'Asteroide' do
     expect(asteroide.efectos.key?(Asteroide)).to eq true
   end
 
+  it 'should no estar vivo si su vida es nula' do
+    asteroide = Asteroide.new 0, 15
+
+    expect(asteroide.esta_vivo).to eq false
+  end
+
 end
