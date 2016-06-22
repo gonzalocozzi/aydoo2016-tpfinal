@@ -11,6 +11,7 @@ class Asteroide
     @efectos[Bomba] = 0
     @efectos[Estrella] = 0
     @efectos[Misil] = 0
+    @efectos[Asteroide] = 0
   end
 
 end
