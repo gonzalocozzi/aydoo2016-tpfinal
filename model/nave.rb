@@ -1,9 +1,10 @@
 class Nave
 
-  attr_accessor :vida
+  attr_accessor :vida, :masa
 
-  def initialize(vida)
+  def initialize(vida, masa)
     @vida = vida
+    @masa = masa
   end
 
 end
