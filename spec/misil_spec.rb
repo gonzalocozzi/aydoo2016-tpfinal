@@ -27,4 +27,10 @@ describe 'Misil' do
     expect(misil.efectos.key?(Bomba)).to eq true
   end
 
+  it 'should contener una estrella en un mapa desde su creacion' do
+    misil = Misil.new 100, 20
+
+    expect(misil.efectos.key?(Estrella)).to eq true
+  end
+
 end
