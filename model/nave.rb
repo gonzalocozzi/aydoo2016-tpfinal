@@ -13,6 +13,7 @@ class Nave
     @efectos[Asteroide] = 0
     @efectos[Bomba] = 0
     @efectos[Estrella] = 0
+    @efectos[Misil] = 0
   end
 
 end
