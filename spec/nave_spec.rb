@@ -57,4 +57,10 @@ describe 'Nave' do
     expect(nave.esta_vivo).to eq false
   end
 
+  it 'should almacenar como minimo vida en 0' do
+    nave = Nave.new -5, 20
+
+    expect(nave.vida).to eq 0
+  end
+
 end
