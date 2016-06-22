@@ -10,8 +10,9 @@ class Nave
     @vida = vida
     @masa = masa
     @efectos = Hash.new
-    @efectos[Asteroide] = 0;
-    @efectos[Bomba] = 0;
+    @efectos[Asteroide] = 0
+    @efectos[Bomba] = 0
+    @efectos[Estrella] = 0
   end
 
 end
