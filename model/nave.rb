@@ -1,3 +1,6 @@
+require_relative '../model/asteroide'
+require_relative '../model/bomba'
+
 class Nave
 
   attr_accessor :vida, :masa
@@ -8,6 +11,7 @@ class Nave
     @masa = masa
     @efectos = Hash.new
     @efectos[Asteroide] = 0;
+    @efectos[Bomba] = 0;
   end
 
 end
