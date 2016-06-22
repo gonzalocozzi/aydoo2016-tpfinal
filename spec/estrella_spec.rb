@@ -57,4 +57,10 @@ describe 'Estrella' do
     expect(estrella.esta_vivo).to eq false
   end
 
+  it 'should almacenar como minimo vida en 0' do
+    estrella = Estrella.new -1, 0
+
+    expect(estrella.vida).to eq 0
+  end
+
 end

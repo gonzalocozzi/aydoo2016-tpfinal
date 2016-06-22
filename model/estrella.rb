@@ -17,6 +17,7 @@ class Estrella
 
   def definir_estado
     if @vida <= 0
+      @vida = 0
       @esta_vivo = false
     end
     if @masa <= 0
