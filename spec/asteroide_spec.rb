@@ -63,4 +63,10 @@ describe 'Asteroide' do
     expect(asteroide.vida).to eq 0
   end
 
+  it 'should almacenar como minimo masa en 0' do
+    asteroide = Asteroide.new 70, -100
+
+    expect(asteroide.masa).to eq 0  
+  end
+
 end
