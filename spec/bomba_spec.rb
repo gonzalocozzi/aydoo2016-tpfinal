@@ -45,4 +45,10 @@ describe 'Bomba' do
     expect(bomba.efectos.key?(Bomba)).to eq true
   end
 
+  it 'should no estar viva si su vida es nula' do
+    bomba = Bomba.new 0, 50
+
+    expect(bomba.esta_vivo).to eq false
+  end
+
 end
