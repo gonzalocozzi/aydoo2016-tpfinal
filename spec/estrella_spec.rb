@@ -51,4 +51,10 @@ describe 'Estrella' do
     expect(estrella.esta_vivo).to eq false
   end
 
+  it 'should no estar viva si su masa es nula' do
+    estrella = Estrella.new 10, 0
+
+    expect(estrella.esta_vivo).to eq false
+  end
+
 end
