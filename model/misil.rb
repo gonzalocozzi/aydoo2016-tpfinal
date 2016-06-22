@@ -8,6 +8,7 @@ class Misil
     @masa = masa
     @efectos = Hash.new
     @efectos[Asteroide] = 0
+    @efectos[Bomba] = 0
   end
 
 end
