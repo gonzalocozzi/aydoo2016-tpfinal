@@ -11,6 +11,7 @@ class Misil
     @efectos[Bomba] = 0
     @efectos[Estrella] = 0
     @efectos[Nave] = 0
+    @efectos[Misil] = 0
   end
 
 end

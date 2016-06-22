@@ -39,4 +39,10 @@ describe 'Misil' do
     expect(misil.efectos.key?(Nave)).to eq true
   end
 
+  it 'should contener un misil en un mapa desde su creacion' do
+    misil = Misil.new 100, 20
+
+    expect(misil.efectos.key?(Misil)).to eq true
+  end
+
 end
