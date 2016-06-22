@@ -51,4 +51,10 @@ describe 'Nave' do
     expect(nave.esta_vivo).to eq false
   end
 
+  it 'should no estar viva si su masa es nula' do
+    nave = Nave.new 10, 0
+
+    expect(nave.esta_vivo).to eq false
+  end
+
 end
