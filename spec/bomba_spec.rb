@@ -51,4 +51,10 @@ describe 'Bomba' do
     expect(bomba.esta_vivo).to eq false
   end
 
+  it 'should no estar viva si su masa es nula' do
+    bomba = Bomba.new 30, 0
+
+    expect(bomba.esta_vivo).to eq false
+  end
+
 end

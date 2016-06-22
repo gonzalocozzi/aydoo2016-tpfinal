@@ -19,6 +19,9 @@ class Bomba
     if @vida <= 0
       @esta_vivo = false
     end
+    if @masa <= 0
+      @esta_vivo = false
+    end
   end
 
 end
