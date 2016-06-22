@@ -45,4 +45,10 @@ describe 'Estrella' do
     expect(estrella.efectos.key?(Estrella)).to eq true
   end
 
+  it 'should no estar viva si su vida es nula' do
+    estrella = Estrella.new 0, 45
+
+    expect(estrella.esta_vivo).to eq false
+  end
+
 end
