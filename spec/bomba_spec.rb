@@ -63,4 +63,10 @@ describe 'Bomba' do
     expect(bomba.vida).to eq 0
   end
 
+  it 'should almacenar como minimo masa en 0' do
+    bomba = Bomba.new 30, -20
+
+    expect(bomba.masa).to eq 0
+  end
+
 end
