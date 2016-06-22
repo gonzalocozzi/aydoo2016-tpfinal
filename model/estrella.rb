@@ -21,6 +21,7 @@ class Estrella
       @esta_vivo = false
     end
     if @masa <= 0
+      @masa = 0
       @esta_vivo = false
     end
   end

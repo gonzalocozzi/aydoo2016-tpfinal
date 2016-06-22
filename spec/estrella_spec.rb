@@ -63,4 +63,10 @@ describe 'Estrella' do
     expect(estrella.vida).to eq 0
   end
 
+  it 'should almacenar como minimo masa en 0' do
+    estrella = Estrella.new 10, -20
+
+    expect(estrella.masa).to eq 0
+  end
+
 end
