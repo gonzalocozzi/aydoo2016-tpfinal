@@ -45,4 +45,11 @@ describe 'Misil' do
     expect(misil.efectos.key?(Misil)).to eq true
   end
 
+  it 'should no estar vivo si su vida es nula' do
+    misil = Misil.new 0, 20
+
+    expect(misil.esta_vivo).to eq false
+  end
+
+
 end
