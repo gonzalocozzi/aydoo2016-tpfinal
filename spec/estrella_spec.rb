@@ -27,4 +27,10 @@ describe 'Estrella' do
     expect(estrella.efectos.key?(Bomba)).to eq true
   end
 
+  it 'should contener una nave en un mapa desde su creacion' do
+    estrella = Estrella.new 100, 45
+
+    expect(estrella.efectos.key?(Nave)).to eq true
+  end
+
 end

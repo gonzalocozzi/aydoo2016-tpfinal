@@ -9,6 +9,7 @@ class Estrella
     @efectos = Hash.new
     @efectos[Asteroide] = 0
     @efectos[Bomba] = 0
+    @efectos[Nave] = 0
   end
 
 end
