@@ -51,4 +51,10 @@ describe 'Asteroide' do
     expect(asteroide.esta_vivo).to eq false
   end
 
+  it 'should no estar vivo si su masa es nula' do
+    asteroide = Asteroide.new 90, 0
+
+    expect(asteroide.esta_vivo).to eq false
+  end
+
 end
