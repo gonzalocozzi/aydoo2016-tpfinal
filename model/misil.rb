@@ -10,8 +10,13 @@ class Misil
     @efectos[Asteroide] = 0
     @efectos[Bomba] = 0
     @efectos[Estrella] = 0
-    @efectos[Nave] = 0
+    @efectos[Nave] = EfectoDestructivo.new 100
     @efectos[Misil] = 0
+    definir_estado
+  end
+
+  def colisiona_con objeto_espacial
+    @efectos[objeto_espacial.class].aplicar_efecto self, objeto_espacial
     definir_estado
   end
 
