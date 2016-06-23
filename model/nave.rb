@@ -1,5 +1,3 @@
-require_relative '../model/efecto_destructivo'
-
 class Nave
 
   attr_accessor :masa, :vida
@@ -11,7 +9,7 @@ class Nave
     @efectos = Hash.new
     @efectos[Asteroide] = EfectoMasa.new -0.5
     @efectos[Bomba] = EfectoDestructivo.new 50
-    @efectos[Estrella] = 0
+    @efectos[Estrella] = EfectoConstructivo.new 1
     @efectos[Misil] = EfectoDestructivo.new 80
     @efectos[Nave] = EfectoDestructivo.new 100
     definir_estado
