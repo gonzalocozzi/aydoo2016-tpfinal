@@ -57,4 +57,10 @@ describe 'Misil' do
     expect(misil.esta_vivo).to eq false
   end
 
+  it 'should almacenar como minimo vida en 0' do
+    misil = Misil.new -15, 20
+
+    expect(misil.vida).to eq 0
+  end
+
 end
