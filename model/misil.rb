@@ -11,7 +11,7 @@ class Misil
     @efectos[Bomba] = 0
     @efectos[Estrella] = 0
     @efectos[Nave] = EfectoDestructivo.new 100
-    @efectos[Misil] = 0
+    @efectos[Misil] = EfectoDestructivo.new 100
     definir_estado
   end
 
