@@ -1,6 +1,7 @@
 class Nave
 
-  attr_reader :vida, :masa, :efectos, :esta_vivo
+  attr_accessor :masa
+  attr_reader :vida, :efectos, :esta_vivo
 
   def initialize(vida, masa)
     @vida = vida
