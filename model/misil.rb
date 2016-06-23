@@ -1,6 +1,7 @@
 class Misil
 
-  attr_reader :vida, :masa, :efectos, :esta_vivo
+  attr_accessor :vida
+  attr_reader :masa, :efectos, :esta_vivo
 
   def initialize(vida, masa)
     @vida = vida

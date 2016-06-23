@@ -9,4 +9,13 @@ describe 'EfectoDestructivo' do
     expect(efecto_destructivo.variacion_de_vida).to eq 40
   end
 
+  it 'should quitar vida a un objeto espacial' do
+    efecto_destructivo = EfectoDestructivo.new 75
+    misil = Misil.new 80, 100
+
+    efecto_destructivo.aplicar_efecto misil
+
+    expect(misil.vida).to eq 5
+  end
+
 end
