@@ -9,7 +9,7 @@ class Nave
     @vida = vida
     @masa = masa
     @efectos = Hash.new
-    @efectos[Asteroide] = 0
+    @efectos[Asteroide] = EfectoMasa.new -0.5
     @efectos[Bomba] = EfectoDestructivo.new 50
     @efectos[Estrella] = 0
     @efectos[Misil] = EfectoDestructivo.new 80
@@ -18,7 +18,7 @@ class Nave
   end
 
   def colisiona_con objeto_espacial
-    @efectos[objeto_espacial.class].aplicar_efecto self
+    @efectos[objeto_espacial.class].aplicar_efecto self, objeto_espacial
     definir_estado
   end
 

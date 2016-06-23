@@ -96,4 +96,13 @@ describe 'Nave' do
     expect(nave.vida).to eq 0
   end
 
+  it 'should perder masa en un 50% de la masa del asteroide cuando colisiona con un asteroide' do
+    nave = Nave.new 50, 20
+    asteroide = Asteroide.new 100, 10
+
+    nave.colisiona_con asteroide
+
+    expect(nave.masa).to eq 15
+  end
+
 end

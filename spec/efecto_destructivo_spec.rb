@@ -13,7 +13,7 @@ describe 'EfectoDestructivo' do
     efecto_destructivo = EfectoDestructivo.new 75
     misil = Misil.new 80, 100
 
-    efecto_destructivo.aplicar_efecto misil
+    efecto_destructivo.aplicar_efecto misil, nil
 
     expect(misil.vida).to eq 5
   end
