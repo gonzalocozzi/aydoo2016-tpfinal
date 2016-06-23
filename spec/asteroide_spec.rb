@@ -66,7 +66,16 @@ describe 'Asteroide' do
   it 'should almacenar como minimo masa en 0' do
     asteroide = Asteroide.new 70, -100
 
-    expect(asteroide.masa).to eq 0  
+    expect(asteroide.masa).to eq 0
+  end
+
+  it 'should ganar el 10% de la masa de la nave cuando colisiona con una nave' do
+    asteroide = Asteroide.new 100, 50
+    nave = Nave.new 10, 25
+
+    asteroide.colisiona_con nave
+
+    expect(asteroide.masa).to eq 52.5
   end
 
 end
