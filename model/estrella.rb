@@ -1,7 +1,6 @@
 class Estrella
 
-  attr_accessor :vida, :masa
-  attr_reader :efectos, :esta_vivo
+  attr_reader :vida, :masa, :efectos, :esta_vivo
 
   def initialize(vida, masa)
     @vida = vida
