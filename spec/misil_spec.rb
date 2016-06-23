@@ -114,4 +114,13 @@ describe 'Misil' do
     expect(misil.vida).to eq 200
   end
 
+  it 'should no perder masa cuando colisiona con un asteroide' do
+    misil = Misil.new 200, 15
+    asteroide = Asteroide.new 70, 120
+
+    misil.colisiona_con asteroide
+
+    expect(misil.masa).to eq 15
+  end
+
 end
