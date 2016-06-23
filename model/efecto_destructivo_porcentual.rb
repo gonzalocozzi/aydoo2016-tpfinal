@@ -6,7 +6,7 @@ class EfectoDestructivoPorcentual
     @variacion_de_vida = variacion_de_vida
   end
 
-  def aplicar_efecto(objeto_colisionador)
+  def aplicar_efecto(objeto_colisionador, objeto_colisionado)
     variacion_de_vida_del_objeto_colisionador = objeto_colisionador.vida * @variacion_de_vida
     objeto_colisionador.vida -= variacion_de_vida_del_objeto_colisionador
   end
