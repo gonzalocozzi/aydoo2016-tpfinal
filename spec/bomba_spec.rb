@@ -96,4 +96,13 @@ describe 'Bomba' do
     expect(bomba_1.vida).to eq 0
   end
 
+  it 'should perder el 100% de su vida cuando colisiona con un asteroide' do
+    bomba = Bomba.new 250, 50
+    asteroide = Asteroide.new 100, 100
+
+    bomba.colisiona_con asteroide
+
+    expect(bomba.vida).to eq 0
+  end
+
 end
