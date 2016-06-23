@@ -9,7 +9,7 @@ class Bomba
     @efectos = Hash.new
     @efectos[Asteroide] = EfectoDestructivoPorcentual.new 1
     @efectos[Nave] = EfectoDestructivo.new 100
-    @efectos[Estrella] = 0
+    @efectos[Estrella] = EfectoDestructivo.new 100
     @efectos[Misil] = EfectoDestructivoPorcentual.new 0.5
     @efectos[Bomba] = EfectoDestructivo.new 100
     definir_estado

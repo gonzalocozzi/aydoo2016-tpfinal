@@ -105,4 +105,13 @@ describe 'Bomba' do
     expect(bomba.vida).to eq 0
   end
 
+  it 'should perder 100 puntos de vida cuando colisiona con una estrella' do
+    bomba = Bomba.new 500, 50
+    estrella = Estrella.new 150, 50
+
+    bomba.colisiona_con estrella
+
+    expect(bomba.vida).to eq 400
+  end
+
 end
