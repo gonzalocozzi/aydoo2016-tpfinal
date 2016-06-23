@@ -1,7 +1,9 @@
+require_relative '../model/efecto_destructivo'
+
 class Nave
 
-  attr_accessor :masa
-  attr_reader :vida, :efectos, :esta_vivo
+  attr_accessor :masa, :vida
+  attr_reader :efectos, :esta_vivo
 
   def initialize(vida, masa)
     @vida = vida
@@ -11,8 +13,12 @@ class Nave
     @efectos[Bomba] = 0
     @efectos[Estrella] = 0
     @efectos[Misil] = 0
-    @efectos[Nave] = 0
+    @efectos[Nave] = EfectoDestructivo.new 100
     definir_estado
+  end
+
+  def colisiona_con objeto_espacial
+    @efectos[objeto_espacial.class].aplicar_efecto self
   end
 
   def definir_estado
