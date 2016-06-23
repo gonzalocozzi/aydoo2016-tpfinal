@@ -96,4 +96,13 @@ describe 'Misil' do
     expect(misil.vida).to eq 200
   end
 
+  it 'should no perder masa cuando colisiona con una bomba' do
+    misil = Misil.new 200, 20
+    bomba = Bomba.new 10, 80
+
+    misil.colisiona_con bomba
+
+    expect(misil.masa).to eq 20
+  end
+
 end
