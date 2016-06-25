@@ -69,4 +69,13 @@ describe 'Estrella' do
     expect(estrella.masa).to eq 0
   end
 
+  it 'should perder el 100% de su vida cuando colisiona con una nave' do
+    estrella = Estrella.new 50, 45
+    nave = Nave.new 250, 15
+
+    estrella.colisiona_con nave
+
+    expect(estrella.vida).to eq 0
+  end
+
 end
