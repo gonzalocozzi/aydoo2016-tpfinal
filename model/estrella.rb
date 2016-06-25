@@ -8,7 +8,7 @@ class Estrella
     @masa = masa
     @efectos = Hash.new
     @efectos[Asteroide] = 0
-    @efectos[Bomba] = 0
+    @efectos[Bomba] = EfectoDestructivoPorcentual.new 1
     @efectos[Nave] = EfectoDestructivoPorcentual.new 1
     @efectos[Misil] = EfectoDestructivo.new 0
     @efectos[Estrella] = 0
