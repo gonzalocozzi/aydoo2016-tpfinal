@@ -22,6 +22,12 @@ describe 'Nave' do
     expect(nave.vida).to eq 100
   end
 
+  it 'should tener 100 puntos de masa en su creacion' do
+    nave = Nave.new
+
+    expect(nave.masa).to eq 100
+  end
+
   it 'should contener un asteroide en un mapa desde su creacion' do
     nave = Nave.new 100, 20
 
