@@ -30,6 +30,10 @@ class Bomba
     definir_estado
   end
 
+  def agregar_colision objeto_espacial, efecto
+    @efectos[objeto_espacial.class] = efecto
+  end
+
   def definir_estado
     if @vida <= 0
       @vida = 0
