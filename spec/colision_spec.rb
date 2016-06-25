@@ -308,4 +308,14 @@ describe 'Colision' do
     expect(asteroide.masa).to eq 100
   end
 
+  it 'deberia quitarle 100 puntos de vida a una bomba que colisiona con una estrella' do
+    bomba = Bomba.new 200, 90
+    estrella = Estrella.new
+    colision = Colision.new
+
+    colision.colisionar bomba, estrella
+
+    expect(bomba.vida).to eq 100
+  end
+
 end
