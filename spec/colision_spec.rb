@@ -75,4 +75,15 @@ describe 'Colision' do
     expect(nave.masa).to eq 50
   end
 
+  #Ejemplo de consigna
+  it 'deberia agregarle el 10% de la masa de la nave a la masa de un asteroide que colisiona con una nave' do
+    nave = Nave.new
+    asteroide = Asteroide.new 50, 100
+    colision = Colision.new
+
+    colision.colisionar nave, asteroide
+
+    expect(asteroide.masa).to eq 110
+  end
+
 end
