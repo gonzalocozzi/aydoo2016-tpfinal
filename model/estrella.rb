@@ -10,7 +10,7 @@ class Estrella
     @efectos[Asteroide] = 0
     @efectos[Bomba] = 0
     @efectos[Nave] = EfectoDestructivoPorcentual.new 1
-    @efectos[Misil] = 0
+    @efectos[Misil] = EfectoDestructivo.new 0
     @efectos[Estrella] = 0
     definir_estado
   end
