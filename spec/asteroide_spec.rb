@@ -132,4 +132,13 @@ describe 'Asteroide' do
     expect(asteroide_1.masa).to eq 95
   end
 
+  it 'should no perder vida cuando colisiona con una estrella' do
+    asteroide = Asteroide.new 100, 210
+    estrella = Estrella.new 55, 300
+
+    asteroide.colisiona_con estrella
+
+    expect(asteroide.vida).to eq 100
+  end
+
 end
