@@ -22,6 +22,12 @@ describe 'Bomba' do
     expect(bomba.vida).to eq 100
   end
 
+  it 'should tener 100 puntos de masa en su creacion' do
+    bomba = Bomba.new
+
+    expect(bomba.masa).to eq 100
+  end
+
   it 'should contener un asteroide en un mapa desde su creacion' do
     bomba = Bomba.new 185, 50
 
