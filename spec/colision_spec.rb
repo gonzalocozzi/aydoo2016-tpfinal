@@ -368,4 +368,14 @@ describe 'Colision' do
     expect(asteroide_2.masa).to eq 100
   end
 
+  it 'deberia no provocar cambios en la vida a un asteroide que colisiona con una estrella' do
+    asteroide = Asteroide.new
+    estrella = Estrella.new 55, 70
+    colision = Colision.new
+
+    colision.colisionar asteroide, estrella
+
+    expect(asteroide.vida).to eq 100
+  end
+
 end
