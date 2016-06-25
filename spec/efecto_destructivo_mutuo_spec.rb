@@ -19,4 +19,14 @@ describe 'EfectoDestructivoMutuo' do
     expect(misil.vida).to eq 30
   end
 
+  it 'should quitar vida a un objeto espacial que es colisionado por otro objeto espacial' do
+    efecto_destructivo_mutuo = EfectoDestructivoMutuo.new 50
+    misil = Misil.new 80, 100
+    asteroide = Asteroide.new 25, 60
+
+    efecto_destructivo_mutuo.aplicar_efecto misil, asteroide
+
+    expect(asteroide.vida).to eq -25
+  end
+
 end
