@@ -22,6 +22,12 @@ describe 'Asteroide' do
     expect(asteroide.vida).to eq 100
   end
 
+  it 'should tener 100 puntos de masa en su creacion' do
+    asteroide = Asteroide.new
+
+    expect(asteroide.masa).to eq 100
+  end
+
   it 'should contener una nave en un mapa desde su creacion' do
     asteroide = Asteroide.new 100, 15
 
