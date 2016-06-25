@@ -163,4 +163,13 @@ describe 'Asteroide' do
     expect(asteroide.masa).to eq 210
   end
 
+  it 'should poder agregar nuevos objetos espaciales y efectos asociados' do
+    misil = Misil.new
+    asteroide = Asteroide.new
+
+    asteroide.agregar_colision misil, "cualquier_efecto"
+
+    expect(asteroide.efectos[Misil]).to eq "cualquier_efecto"
+  end
+
 end
