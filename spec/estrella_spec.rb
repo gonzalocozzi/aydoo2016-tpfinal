@@ -145,4 +145,13 @@ describe 'Estrella' do
     expect(estrella_2.vida).to eq 0
   end
 
+  it 'should poder agregar nuevos objetos espaciales y efectos asociados' do
+    estrella = Estrella.new
+    bomba = Bomba.new
+
+    estrella.agregar_colision bomba, "cualquier_efecto"
+
+    expect(estrella.efectos[Bomba]).to eq "cualquier_efecto"
+  end
+
 end
