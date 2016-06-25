@@ -6,6 +6,8 @@ class ObjetoEspacial
     #args[0] = vida
     #args[1] = masa
     def initialize(*args)
+      @esta_vivo = true
+      @efectos = Hash.new
       #Ruby no permite sobrecargar metodos. Para evitar la ruptura de numerosas pruebas...
       #...se implementa esta logica para soportar multiples argumentos
       if args.length == 2
@@ -16,7 +18,6 @@ class ObjetoEspacial
         @vida = 100
         @masa = 100
       end
-      @efectos = Hash.new
     end
 
     def colisiona_con objeto_espacial

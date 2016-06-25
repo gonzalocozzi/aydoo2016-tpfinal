@@ -418,4 +418,12 @@ describe 'Colision' do
     expect(estrella_2.vida).to eq 0
   end
 
+  it 'deberia impedir la colision si alguno de los objetos espaciales esta muerto.' do
+    nave = Nave.new 0, 70
+    estrella = Estrella.new
+    colision = Colision.new
+
+    expect {colision.colisionar nave, estrella}.to raise_error(ObjetoSinVidaError)
+  end
+
 end
