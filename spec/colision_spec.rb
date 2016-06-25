@@ -4,7 +4,7 @@ require_relative '../model/colision'
 
 describe 'Colision' do
 
-  it 'deberia quitarle 100 puntos de vida a una nave que colisiona con otra nave' do
+  it 'deberia quitarle 100 puntos de vida a una nave que colisiona a otra nave' do
     nave_1 = Nave.new 110, 20
     nave_2 = Nave.new 250, 15
     colision = Colision.new
@@ -32,6 +32,16 @@ describe 'Colision' do
     colision.colisionar nave, misil
 
     expect(nave.vida).to eq 0
+  end
+
+  it 'deberia quitarle 100 puntos de vida a un misil que colisiona con una nave' do
+    nave = Nave.new 80, 10
+    misil = Misil.new 115, 90
+    colision = Colision.new
+
+    colision.colisionar nave, misil
+
+    expect(misil.vida).to eq 15
   end
 
 end
