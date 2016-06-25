@@ -218,4 +218,14 @@ describe 'Colision' do
     expect(misil.masa).to eq 30
   end
 
+  it 'deberia no provocar cambios en la vida de una estrella que colisiona con un misil' do
+    misil = Misil.new 10, 30
+    estrella = Estrella.new 50, 10
+    colision = Colision.new
+
+    colision.colisionar misil, estrella
+
+    expect(estrella.vida).to eq 50
+  end
+
 end
