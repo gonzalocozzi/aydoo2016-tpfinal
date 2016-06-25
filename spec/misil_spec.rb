@@ -4,85 +4,85 @@ require_relative '../model/misil'
 
 describe 'Misil' do
 
-  it 'should almacenar vida desde su creacion' do
+  it 'deberia almacenar vida desde su creacion' do
     misil = Misil.new 100, 45
 
     expect(misil.vida).to eq 100
   end
 
-  it 'should almacenar masa desde su creacion' do
+  it 'deberia almacenar masa desde su creacion' do
     misil = Misil.new 100, 45
 
     expect(misil.masa).to eq 45
   end
 
-  it 'should tener 100 puntos de vida en su creacion' do
+  it 'deberia tener 100 puntos de vida en su creacion' do
     misil = Misil.new
 
     expect(misil.vida).to eq 100
   end
 
-  it 'should tener 100 puntos de masa en su creacion' do
+  it 'deberia tener 100 puntos de masa en su creacion' do
     misil = Misil.new
 
     expect(misil.masa).to eq 100
   end
 
-  it 'should contener un asteroide en un mapa desde su creacion' do
+  it 'deberia contener un asteroide en un mapa desde su creacion' do
     misil = Misil.new 100, 20
 
     expect(misil.efectos.key?(Asteroide)).to eq true
   end
 
-  it 'should contener una bomba en un mapa desde su creacion' do
+  it 'deberia contener una bomba en un mapa desde su creacion' do
     misil = Misil.new 100, 20
 
     expect(misil.efectos.key?(Bomba)).to eq true
   end
 
-  it 'should contener una estrella en un mapa desde su creacion' do
+  it 'deberia contener una estrella en un mapa desde su creacion' do
     misil = Misil.new 100, 20
 
     expect(misil.efectos.key?(Estrella)).to eq true
   end
 
-  it 'should contener una nave en un mapa desde su creacion' do
+  it 'deberia contener una nave en un mapa desde su creacion' do
     misil = Misil.new 100, 20
 
     expect(misil.efectos.key?(Nave)).to eq true
   end
 
-  it 'should contener un misil en un mapa desde su creacion' do
+  it 'deberia contener un misil en un mapa desde su creacion' do
     misil = Misil.new 100, 20
 
     expect(misil.efectos.key?(Misil)).to eq true
   end
 
-  it 'should no estar vivo si su vida es nula' do
+  it 'deberia no estar vivo si su vida es nula' do
     misil = Misil.new 0, 20
 
     expect(misil.esta_vivo).to eq false
   end
 
-  it 'should no estar vivo si su masa es nula' do
+  it 'deberia no estar vivo si su masa es nula' do
     misil = Misil.new 60, 0
 
     expect(misil.esta_vivo).to eq false
   end
 
-  it 'should almacenar como minimo vida en 0' do
+  it 'deberia almacenar como minimo vida en 0' do
     misil = Misil.new -15, 20
 
     expect(misil.vida).to eq 0
   end
 
-  it 'should almacenar como minimo masa en 0' do
+  it 'deberia almacenar como minimo masa en 0' do
     misil = Misil.new -15, -20
 
     expect(misil.masa).to eq 0
   end
 
-  it 'should perder 100 puntos de vida cuando colisiona con una nave' do
+  it 'deberia perder 100 puntos de vida cuando colisiona con una nave' do
     misil = Misil.new 110, 20
     nave = Nave.new 250, 15
 
@@ -91,7 +91,7 @@ describe 'Misil' do
     expect(misil.vida).to eq 10
   end
 
-  it 'should perder 100 puntos de vida cuando colisiona con otro misil' do
+  it 'deberia perder 100 puntos de vida cuando colisiona con otro misil' do
     misil_1 = Misil.new 200, 20
     misil_2 = Misil.new 110, 20
 
@@ -100,7 +100,7 @@ describe 'Misil' do
     expect(misil_1.vida).to eq 100
   end
 
-  it 'should hacerle perder 100 puntos de vida al otro misil cuando colisiona con otro misil' do
+  it 'deberia hacerle perder 100 puntos de vida al otro misil cuando colisiona con otro misil' do
     misil_1 = Misil.new 200, 20
     misil_2 = Misil.new 110, 20
 
@@ -109,7 +109,7 @@ describe 'Misil' do
     expect(misil_2.vida).to eq 10
   end
 
-  it 'should no perder vida cuando colisiona con una bomba' do
+  it 'deberia no perder vida cuando colisiona con una bomba' do
     misil = Misil.new 200, 20
     bomba = Bomba.new 10, 80
 
@@ -118,7 +118,7 @@ describe 'Misil' do
     expect(misil.vida).to eq 200
   end
 
-  it 'should no perder masa cuando colisiona con una bomba' do
+  it 'deberia no perder masa cuando colisiona con una bomba' do
     misil = Misil.new 200, 20
     bomba = Bomba.new 10, 80
 
@@ -127,7 +127,7 @@ describe 'Misil' do
     expect(misil.masa).to eq 20
   end
 
-  it 'should no perder vida cuando colisiona con un asteroide' do
+  it 'deberia no perder vida cuando colisiona con un asteroide' do
     misil = Misil.new 200, 20
     asteroide = Asteroide.new 70, 120
 
@@ -136,7 +136,7 @@ describe 'Misil' do
     expect(misil.vida).to eq 200
   end
 
-  it 'should no perder masa cuando colisiona con un asteroide' do
+  it 'deberia no perder masa cuando colisiona con un asteroide' do
     misil = Misil.new 200, 15
     asteroide = Asteroide.new 70, 120
 
@@ -145,7 +145,7 @@ describe 'Misil' do
     expect(misil.masa).to eq 15
   end
 
-  it 'should no perder vida cuando colisiona con una estrella' do
+  it 'deberia no perder vida cuando colisiona con una estrella' do
     misil = Misil.new 30, 5
     estrella = Estrella.new 55, 300
 
@@ -154,7 +154,7 @@ describe 'Misil' do
     expect(misil.vida).to eq 30
   end
 
-  it 'should no perder masa cuando colisiona con una estrella' do
+  it 'deberia no perder masa cuando colisiona con una estrella' do
     misil = Misil.new 30, 5
     estrella = Estrella.new 55, 300
 
@@ -163,7 +163,7 @@ describe 'Misil' do
     expect(misil.masa).to eq 5
   end
 
-  it 'should poder agregar nuevos objetos espaciales y efectos asociados' do
+  it 'deberia poder agregar nuevos objetos espaciales y efectos asociados' do
     misil = Misil.new
     nave = Nave.new
 

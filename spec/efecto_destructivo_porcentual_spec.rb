@@ -4,13 +4,13 @@ require_relative '../model/efecto_destructivo_porcentual'
 
 describe 'EfectoDestructivoPorcentual' do
 
-  it 'should almacenar variacion que hara en la vida desde su creacion' do
+  it 'deberia almacenar variacion que hara en la vida desde su creacion' do
     efecto_destructivo_porcentual = EfectoDestructivoPorcentual.new 0.3
 
     expect(efecto_destructivo_porcentual.variacion_de_atributo).to eq 0.3
   end
 
-  it 'should quitar vida a un objeto espacial' do
+  it 'deberia quitar vida a un objeto espacial' do
     efecto_destructivo_porcentual = EfectoDestructivoPorcentual.new 0.5
     estrella = Estrella.new 80, 100
 

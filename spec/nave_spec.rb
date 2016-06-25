@@ -4,85 +4,85 @@ require_relative '../model/nave'
 
 describe 'Nave' do
 
-  it 'should almacenar vida desde su creacion' do
+  it 'deberia almacenar vida desde su creacion' do
     nave = Nave.new 100, 0
 
     expect(nave.vida).to eq 100
   end
 
-  it 'should almacenar masa desde su creacion' do
+  it 'deberia almacenar masa desde su creacion' do
     nave = Nave.new 100, 20
 
     expect(nave.masa).to eq 20
   end
 
-  it 'should tener 100 puntos de vida en su creacion' do
+  it 'deberia tener 100 puntos de vida en su creacion' do
     nave = Nave.new
 
     expect(nave.vida).to eq 100
   end
 
-  it 'should tener 100 puntos de masa en su creacion' do
+  it 'deberia tener 100 puntos de masa en su creacion' do
     nave = Nave.new
 
     expect(nave.masa).to eq 100
   end
 
-  it 'should contener un asteroide en un mapa desde su creacion' do
+  it 'deberia contener un asteroide en un mapa desde su creacion' do
     nave = Nave.new 100, 20
 
     expect(nave.efectos.key?(Asteroide)).to eq true
   end
 
-  it 'should contener una bomba en un mapa desde su creacion' do
+  it 'deberia contener una bomba en un mapa desde su creacion' do
     nave = Nave.new 100, 20
 
     expect(nave.efectos.key?(Bomba)).to eq true
   end
 
-  it 'should contener una estrella en un mapa desde su creacion' do
+  it 'deberia contener una estrella en un mapa desde su creacion' do
     nave = Nave.new 100, 20
 
     expect(nave.efectos.key?(Estrella)).to eq true
   end
 
-  it 'should contener un misil en un mapa desde su creacion' do
+  it 'deberia contener un misil en un mapa desde su creacion' do
     nave = Nave.new 100, 20
 
     expect(nave.efectos.key?(Misil)).to eq true
   end
 
-  it 'should contener una nave en un mapa desde su creacion' do
+  it 'deberia contener una nave en un mapa desde su creacion' do
     nave = Nave.new 100, 20
 
     expect(nave.efectos.key?(Nave)).to eq true
   end
 
-  it 'should no estar viva si su vida es nula' do
+  it 'deberia no estar viva si su vida es nula' do
     nave = Nave.new 0, 20
 
     expect(nave.esta_vivo).to eq false
   end
 
-  it 'should no estar viva si su masa es nula' do
+  it 'deberia no estar viva si su masa es nula' do
     nave = Nave.new 10, 0
 
     expect(nave.esta_vivo).to eq false
   end
 
-  it 'should almacenar como minimo vida en 0' do
+  it 'deberia almacenar como minimo vida en 0' do
     nave = Nave.new -5, 20
 
     expect(nave.vida).to eq 0
   end
 
-  it 'should almacenar como minimo masa en 0' do
+  it 'deberia almacenar como minimo masa en 0' do
     nave = Nave.new 10, -20
 
     expect(nave.masa).to eq 0
   end
 
-  it 'should perder 100 puntos de vida cuando colisiona con otra nave' do
+  it 'deberia perder 100 puntos de vida cuando colisiona con otra nave' do
     nave_1 = Nave.new 110, 20
     nave_2 = Nave.new 250, 15
 
@@ -91,7 +91,7 @@ describe 'Nave' do
     expect(nave_1.vida).to eq 10
   end
 
-  it 'should hacerle perder 100 puntos de vida a la otra nave cuando colisiona con otra nave' do
+  it 'deberia hacerle perder 100 puntos de vida a la otra nave cuando colisiona con otra nave' do
     nave_1 = Nave.new 110, 20
     nave_2 = Nave.new 250, 15
 
@@ -100,7 +100,7 @@ describe 'Nave' do
     expect(nave_2.vida).to eq 150
   end
 
-  it 'should perder 100 puntos de vida cuando colisiona con un misil' do
+  it 'deberia perder 100 puntos de vida cuando colisiona con un misil' do
     nave = Nave.new 70, 20
     misil = Misil.new 100, 10
 
@@ -109,7 +109,7 @@ describe 'Nave' do
     expect(nave.vida).to eq 0
   end
 
-  it 'should perder 50 puntos de vida cuando colisiona con una bomba' do
+  it 'deberia perder 50 puntos de vida cuando colisiona con una bomba' do
     nave = Nave.new 50, 20
     bomba = Bomba.new 100, 10
 
@@ -118,7 +118,7 @@ describe 'Nave' do
     expect(nave.vida).to eq 0
   end
 
-  it 'should perder masa en un 50% de la masa del asteroide cuando colisiona con un asteroide' do
+  it 'deberia perder masa en un 50% de la masa del asteroide cuando colisiona con un asteroide' do
     nave = Nave.new 50, 20
     asteroide = Asteroide.new 100, 10
 
@@ -127,7 +127,7 @@ describe 'Nave' do
     expect(nave.masa).to eq 15
   end
 
-  it 'should ganar el 100% de la vida de la estrella cuando colisiona con una estrella' do
+  it 'deberia ganar el 100% de la vida de la estrella cuando colisiona con una estrella' do
     nave = Nave.new 50, 20
     estrella = Estrella.new 50, 10
 
@@ -136,7 +136,7 @@ describe 'Nave' do
     expect(nave.vida).to eq 100
   end
 
-  it 'should poder agregar nuevos objetos espaciales y efectos asociados' do
+  it 'deberia poder agregar nuevos objetos espaciales y efectos asociados' do
     nave = Nave.new
     bomba = Bomba.new
 
