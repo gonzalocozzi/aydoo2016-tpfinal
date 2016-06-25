@@ -98,7 +98,7 @@ describe 'Colision' do
   end
 
   #Ejemplo de consigna
-  it 'deberia quitarle toda la vida a la estrella que colisiona con una nave' do
+  it 'deberia quitarle toda la vida a una estrella que colisiona con una nave' do
     nave = Nave.new
     estrella = Estrella.new 50, 50
     colision = Colision.new
@@ -106,6 +106,16 @@ describe 'Colision' do
     colision.colisionar estrella, nave
 
     expect(estrella.vida).to eq 0
+  end
+
+  it 'deberia quitarle 100 puntos de vida un misil que colisiona a otro misil' do
+    misil_1 = Misil.new 115, 90
+    misil_2 = Misil.new
+    colision = Colision.new
+
+    colision.colisionar misil_1, misil_2
+
+    expect(misil_1.vida).to eq 15
   end
 
 end
