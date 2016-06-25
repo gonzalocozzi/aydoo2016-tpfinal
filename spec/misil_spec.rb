@@ -172,4 +172,13 @@ describe 'Misil' do
     expect(misil.efectos[Nave]).to eq "cualquier_efecto"
   end
 
+  it 'deberia indicar que la colision no ha sido definida con el objeto indicado' do
+    misil = Misil.new
+    nave = Nave.new
+
+    misil.efectos.delete Nave
+
+    expect{misil.colisiona_con nave}.to raise_error ColisionNoDefinidaError
+  end
+
 end
