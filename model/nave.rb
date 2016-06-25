@@ -3,9 +3,20 @@ class Nave
   attr_accessor :masa, :vida
   attr_reader :efectos, :esta_vivo
 
-  def initialize(vida, masa)
-    @vida = vida
-    @masa = masa
+  #args[0] = vida
+  #args[1] = masa
+  def initialize(*args)
+
+    #Ruby no permite sobrecargar metodos. Para evitar la ruptura de numerosas pruebas
+    #implementar esta logica para soportar multiples argumentos
+    if args.length == 2
+      @vida = args[0]
+      @masa = args[1]
+    else
+      @vida = 100
+      @masa = 100
+    end
+
     @efectos = Hash.new
     @efectos[Asteroide] = EfectoMasa.new -0.5
     @efectos[Bomba] = EfectoDestructivo.new 50
