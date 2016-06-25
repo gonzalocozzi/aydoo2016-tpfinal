@@ -1,12 +1,22 @@
 require 'rspec'
-require_relative '../model/efecto_destructivo'
+require_relative '../model/efecto_destructivo_mutuo'
 
 describe 'EfectoDestructivoMutuo' do
 
   it 'should almacenar variacion que hara en la vida desde su creacion' do
-    efecto_destructivo_mutuo = EfectoDestructivo.new 75
+    efecto_destructivo_mutuo = EfectoDestructivoMutuo.new 75
 
     expect(efecto_destructivo_mutuo.variacion_de_vida).to eq 75
+  end
+
+  it 'should quitar vida a un objeto espacial que colisiona a otro objeto espacial' do
+    efecto_destructivo_mutuo = EfectoDestructivoMutuo.new 50
+    misil = Misil.new 80, 100
+    asteroide = Asteroide.new 25, 60
+
+    efecto_destructivo_mutuo.aplicar_efecto misil, asteroide
+
+    expect(misil.vida).to eq 30
   end
 
 end
