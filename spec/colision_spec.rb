@@ -253,6 +253,7 @@ describe 'Colision' do
     expect(estrella.masa).to eq 10
   end
 
+  #Ejemplo de consigna
   it 'deberia quitarle 100 puntos de vida a una bomba que colisiona a otra bomba' do
     bomba_1 = Bomba.new 200, 90
     bomba_2 = Bomba.new 20, 45
@@ -263,6 +264,7 @@ describe 'Colision' do
     expect(bomba_1.vida).to eq 100
   end
 
+  #Ejemplo de consigna
   it 'deberia quitarle 100 puntos de vida a una bomba que es colisionada por otra bomba' do
     bomba_1 = Bomba.new 200, 90
     bomba_2 = Bomba.new 20, 45
@@ -271,6 +273,17 @@ describe 'Colision' do
     colision.colisionar bomba_1, bomba_2
 
     expect(bomba_2.vida).to eq 0
+  end
+
+  #Ejemplo de consigna
+  it 'deberia quitarle toda la vida a una bomba que colisiona con un asteroide' do
+    bomba = Bomba.new 200, 100
+    asteroide = Asteroide.new 30, 100
+    colision = Colision.new
+
+    colision.colisionar bomba, asteroide
+
+    expect(bomba.vida).to eq 0
   end
 
 end
