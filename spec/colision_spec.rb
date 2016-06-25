@@ -198,6 +198,7 @@ describe 'Colision' do
     expect(asteroide.masa).to eq 100
   end
 
+  #Ejemplo de consigna
   it 'deberia no provocar cambios en la vida de un misil que colisiona con una estrella' do
     misil = Misil.new 10, 30
     estrella = Estrella.new 50, 10
@@ -208,6 +209,7 @@ describe 'Colision' do
     expect(misil.vida).to eq 10
   end
 
+  #Ejemplo de consigna
   it 'deberia no provocar cambios en la masa de un misil que colisiona con una estrella' do
     misil = Misil.new 10, 30
     estrella = Estrella.new 50, 10
@@ -218,6 +220,7 @@ describe 'Colision' do
     expect(misil.masa).to eq 30
   end
 
+  #Ejemplo de consigna
   it 'deberia no provocar cambios en la vida de una estrella que colisiona con un misil' do
     misil = Misil.new 10, 30
     estrella = Estrella.new 50, 10
@@ -226,6 +229,17 @@ describe 'Colision' do
     colision.colisionar misil, estrella
 
     expect(estrella.vida).to eq 50
+  end
+
+  #Ejemplo de consigna
+  it 'deberia no provocar cambios en la masa de una estrella que colisiona con un misil' do
+    misil = Misil.new 10, 30
+    estrella = Estrella.new 50, 10
+    colision = Colision.new
+
+    colision.colisionar misil, estrella
+
+    expect(estrella.masa).to eq 10
   end
 
 end
