@@ -65,7 +65,7 @@ describe 'Colision' do
   end
 
   #Ejemplo de consigna
-  it 'deberia quitarle el 50% de la masa del asteroide a la masa de una nave que colisiona con un asteroide' do
+  it 'deberia quitarle el 50% de la masa del asteroide a una nave que colisiona con un asteroide' do
     nave = Nave.new
     asteroide = Asteroide.new 50, 100
     colision = Colision.new
@@ -76,14 +76,25 @@ describe 'Colision' do
   end
 
   #Ejemplo de consigna
-  it 'deberia agregarle el 10% de la masa de la nave a la masa de un asteroide que colisiona con una nave' do
+  it 'deberia agregarle el 10% de la masa de la nave a un asteroide que colisiona con una nave' do
     nave = Nave.new
     asteroide = Asteroide.new 50, 100
     colision = Colision.new
 
-    colision.colisionar nave, asteroide
+    colision.colisionar asteroide, nave
 
     expect(asteroide.masa).to eq 110
+  end
+
+  #Ejemplo de consigna
+  it 'deberia agregarle el total de la vida de la estrella a una nave que colisiona con una estrella' do
+    nave = Nave.new
+    estrella = Estrella.new 50, 50
+    colision = Colision.new
+
+    colision.colisionar nave, estrella
+
+    expect(nave.vida).to eq 150
   end
 
 end
