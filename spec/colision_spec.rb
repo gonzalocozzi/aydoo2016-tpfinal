@@ -52,6 +52,16 @@ describe 'Colision' do
     colision.colisionar nave, bomba
 
     expect(nave.vida).to eq 30
-  end  
+  end
+
+  it 'deberia quitarle 100 puntos de vida a una bomba que colisiona con una nave' do
+    nave = Nave.new 80, 10
+    bomba = Bomba.new
+    colision = Colision.new
+
+    colision.colisionar nave, bomba
+
+    expect(bomba.vida).to eq 0
+  end
 
 end
