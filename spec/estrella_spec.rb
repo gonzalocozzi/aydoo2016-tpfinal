@@ -87,4 +87,13 @@ describe 'Estrella' do
     expect(estrella.vida).to eq 50
   end
 
+  it 'should no perder masa cuando colisiona con un misil' do
+    estrella = Estrella.new 50, 45
+    misil = Misil.new 80, 160
+
+    estrella.colisiona_con misil
+
+    expect(estrella.masa).to eq 45
+  end
+
 end
