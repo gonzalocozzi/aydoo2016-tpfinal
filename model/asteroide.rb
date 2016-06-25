@@ -1,14 +1,14 @@
 class Asteroide
 
-  attr_accessor :masa
-  attr_reader :vida, :efectos, :esta_vivo
+  attr_accessor :vida, :masa
+  attr_reader :efectos, :esta_vivo
 
   def initialize(vida, masa)
     @vida = vida
     @masa = masa
     @efectos = Hash.new
     @efectos[Nave] = EfectoMasa.new 0.1
-    @efectos[Bomba] = 0
+    @efectos[Bomba] = EfectoDestructivo.new 0
     @efectos[Estrella] = 0
     @efectos[Misil] = 0
     @efectos[Asteroide] = 0
