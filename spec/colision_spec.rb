@@ -242,4 +242,25 @@ describe 'Colision' do
     expect(estrella.masa).to eq 10
   end
 
+  #Ejemplo de consigna
+  it 'deberia no provocar cambios en la masa de una estrella que colisiona con un misil' do
+    misil = Misil.new 10, 30
+    estrella = Estrella.new 50, 10
+    colision = Colision.new
+
+    colision.colisionar misil, estrella
+
+    expect(estrella.masa).to eq 10
+  end
+
+  it 'deberia quitarle 100 puntos de vida a una bomba que colisiona a otra bomba' do
+    bomba_1 = Bomba.new 200, 90
+    bomba_2 = Bomba.new 20, 45
+    colision = Colision.new
+
+    colision.colisionar bomba_1, bomba_2
+
+    expect(bomba_1.vida).to eq 100
+  end
+
 end
