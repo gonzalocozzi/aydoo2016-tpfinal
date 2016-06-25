@@ -136,4 +136,13 @@ describe 'Nave' do
     expect(nave.vida).to eq 100
   end
 
+  it 'should poder agregar nuevos objetos espaciales y efectos asociados' do
+    nave = Nave.new
+    bomba = Bomba.new
+
+    nave.agregar_colision bomba, "cualquier_efecto"
+
+    expect(nave.efectos[Bomba]).to eq "cualquier_efecto"
+  end
+
 end
