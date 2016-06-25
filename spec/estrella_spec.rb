@@ -22,6 +22,12 @@ describe 'Estrella' do
     expect(estrella.vida).to eq 100
   end
 
+  it 'should tener 100 puntos de masa en su creacion' do
+    estrella = Estrella.new
+
+    expect(estrella.masa).to eq 100
+  end
+
   it 'should contener un asteroide en un mapa desde su creacion' do
     estrella = Estrella.new 100, 45
 
