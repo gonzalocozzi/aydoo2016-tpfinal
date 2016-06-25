@@ -128,4 +128,14 @@ describe 'Colision' do
     expect(misil_2.vida).to eq 0
   end
 
+  it 'deberia no provocar cambios en la vida de un misil que colisiona con una bomba' do
+    misil = Misil.new 115, 90
+    bomba = Bomba.new
+    colision = Colision.new
+
+    colision.colisionar misil, bomba
+
+    expect(misil.vida).to eq 115
+  end
+
 end
