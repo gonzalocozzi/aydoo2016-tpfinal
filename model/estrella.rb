@@ -3,9 +3,19 @@ class Estrella
   attr_accessor :vida
   attr_reader :masa, :efectos, :esta_vivo
 
-  def initialize(vida, masa)
-    @vida = vida
-    @masa = masa
+  #args[0] = vida
+  #args[1] = masa
+  def initialize(*args)
+    #Ruby no permite sobrecargar metodos. Para evitar la ruptura de numerosas pruebas...
+    #...se implementa esta logica para soportar multiples argumentos
+    if args.length == 2
+      @vida = args[0]
+      @masa = args[1]
+    else
+      @vida = 100
+      @masa = 100
+    end
+
     @efectos = Hash.new
     @efectos[Asteroide] = EfectoDestructivoPorcentual.new 1
     @efectos[Bomba] = EfectoDestructivoPorcentual.new 1
