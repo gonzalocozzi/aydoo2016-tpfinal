@@ -7,7 +7,7 @@ describe 'EfectoDestructivoMutuo' do
   it 'should almacenar variacion que hara en la vida desde su creacion' do
     efecto_destructivo_mutuo = EfectoDestructivoMutuo.new 75
 
-    expect(efecto_destructivo_mutuo.variacion_de_vida).to eq 75
+    expect(efecto_destructivo_mutuo.variacion_de_atributo).to eq 75
   end
 
   it 'should quitar vida a un objeto espacial que colisiona a otro objeto espacial' do

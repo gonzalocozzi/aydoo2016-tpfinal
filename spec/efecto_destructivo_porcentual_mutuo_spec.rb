@@ -7,7 +7,7 @@ describe 'EfectoDestructivoPorcentualMutuo' do
   it 'should almacenar variacion que hara en la vida desde su creacion' do
     efecto_destructivo_porcentual_mutuo = EfectoDestructivoPorcentualMutuo.new 0.85
 
-    expect(efecto_destructivo_porcentual_mutuo.variacion_de_vida).to eq 0.85
+    expect(efecto_destructivo_porcentual_mutuo.variacion_de_atributo).to eq 0.85
   end
 
   it 'should quitar vida a un objeto espacial que colisiona con otro objeto espacial' do

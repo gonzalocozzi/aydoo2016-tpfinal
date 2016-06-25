@@ -29,7 +29,6 @@ class ObjetoEspacial
     end
 
     private
-
     #Esta estructura es sospechosa, pero no se encontro otra manera de poder analizar individualmente cada argumentos
     #Esto es necesario para evitar que se almacenen vidas o masas negativas
     def definir_estado

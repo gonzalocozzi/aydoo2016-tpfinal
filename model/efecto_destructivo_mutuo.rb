@@ -1,14 +1,10 @@
-class EfectoDestructivoMutuo
+require_relative '../model/efecto'
 
-  attr_reader :variacion_de_vida
-
-  def initialize(variacion_de_vida)
-    @variacion_de_vida = variacion_de_vida
-  end
+class EfectoDestructivoMutuo < Efecto
 
   def aplicar_efecto(objeto_colisionador, objeto_colisionado)
-    objeto_colisionador.vida -= @variacion_de_vida
-    objeto_colisionado.vida -= @variacion_de_vida
+    objeto_colisionador.vida -= variacion_de_atributo
+    objeto_colisionado.vida -= variacion_de_atributo
   end
 
 end
