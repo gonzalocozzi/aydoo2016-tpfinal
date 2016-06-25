@@ -6,9 +6,8 @@ class Nave
   #args[0] = vida
   #args[1] = masa
   def initialize(*args)
-
-    #Ruby no permite sobrecargar metodos. Para evitar la ruptura de numerosas pruebas
-    #implementar esta logica para soportar multiples argumentos
+    #Ruby no permite sobrecargar metodos. Para evitar la ruptura de numerosas pruebas...
+    #...se implementa esta logica para soportar multiples argumentos
     if args.length == 2
       @vida = args[0]
       @masa = args[1]

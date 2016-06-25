@@ -16,6 +16,12 @@ describe 'Misil' do
     expect(misil.masa).to eq 45
   end
 
+  it 'should tener 100 puntos de vida en su creacion' do
+    misil = Misil.new
+
+    expect(misil.vida).to eq 100
+  end
+
   it 'should contener un asteroide en un mapa desde su creacion' do
     misil = Misil.new 100, 20
 
