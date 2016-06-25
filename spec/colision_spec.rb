@@ -263,4 +263,14 @@ describe 'Colision' do
     expect(bomba_1.vida).to eq 100
   end
 
+  it 'deberia quitarle 100 puntos de vida a una bomba que es colisionada por otra bomba' do
+    bomba_1 = Bomba.new 200, 90
+    bomba_2 = Bomba.new 20, 45
+    colision = Colision.new
+
+    colision.colisionar bomba_1, bomba_2
+
+    expect(bomba_2.vida).to eq 0
+  end
+
 end
