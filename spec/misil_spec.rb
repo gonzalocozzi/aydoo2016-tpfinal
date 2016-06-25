@@ -87,6 +87,15 @@ describe 'Misil' do
     expect(misil_1.vida).to eq 100
   end
 
+  it 'should hacerle perder 100 puntos de vida al otro misil cuando colisiona con otro misil' do
+    misil_1 = Misil.new 200, 20
+    misil_2 = Misil.new 110, 20
+
+    misil_1.colisiona_con misil_2
+
+    expect(misil_2.vida).to eq 10
+  end
+
   it 'should no perder vida cuando colisiona con una bomba' do
     misil = Misil.new 200, 20
     bomba = Bomba.new 10, 80
