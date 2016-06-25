@@ -318,4 +318,14 @@ describe 'Colision' do
     expect(bomba.vida).to eq 100
   end
 
+  it 'deberia quitarle toda la vida a una estrella que colisiona con una bomba' do
+    bomba = Bomba.new 200, 90
+    estrella = Estrella.new
+    colision = Colision.new
+
+    colision.colisionar bomba, estrella
+
+    expect(estrella.vida).to eq 0
+  end
+
 end
