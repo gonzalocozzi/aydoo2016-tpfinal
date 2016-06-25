@@ -39,7 +39,7 @@ describe 'Colision' do
     misil = Misil.new 115, 90
     colision = Colision.new
 
-    colision.colisionar nave, misil
+    colision.colisionar misil, nave
 
     expect(misil.vida).to eq 15
   end
@@ -59,9 +59,20 @@ describe 'Colision' do
     bomba = Bomba.new
     colision = Colision.new
 
-    colision.colisionar nave, bomba
+    colision.colisionar bomba, nave
 
     expect(bomba.vida).to eq 0
+  end
+
+  #Ejemplo de consigna
+  it 'deberia quitarle el 50% de la masa del asteroide a la masa de una nave que colisiona con un asteroide' do
+    nave = Nave.new
+    asteroide = Asteroide.new 50, 100
+    colision = Colision.new
+
+    colision.colisionar nave, asteroide
+
+    expect(nave.masa).to eq 50
   end
 
 end
