@@ -408,4 +408,14 @@ describe 'Colision' do
     expect(estrella_1.vida).to eq 0
   end
 
+  it 'deberia quitarle toda la vida a una estrella que es colisionada por otra estrella' do
+    estrella_1 = Estrella.new 55, 70
+    estrella_2 = Estrella.new
+    colision = Colision.new
+
+    colision.colisionar estrella_1, estrella_2
+
+    expect(estrella_2.vida).to eq 0
+  end
+
 end
