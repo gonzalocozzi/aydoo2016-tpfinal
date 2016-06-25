@@ -163,4 +163,13 @@ describe 'Misil' do
     expect(misil.masa).to eq 5
   end
 
+  it 'should poder agregar nuevos objetos espaciales y efectos asociados' do
+    misil = Misil.new
+    nave = Nave.new
+
+    misil.agregar_colision nave, "cualquier_efecto"
+
+    expect(misil.efectos[Nave]).to eq "cualquier_efecto"
+  end
+
 end
