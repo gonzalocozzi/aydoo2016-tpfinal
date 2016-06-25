@@ -148,4 +148,14 @@ describe 'Colision' do
     expect(misil.masa).to eq 90
   end
 
+  it 'deberia quitar la mitad de la vida de una que colisiona con un misil' do
+    misil = Misil.new 115, 90
+    bomba = Bomba.new
+    colision = Colision.new
+
+    colision.colisionar misil, bomba
+
+    expect(bomba.vida).to eq 50
+  end
+
 end
