@@ -11,7 +11,7 @@ class Nave
     @efectos[Bomba] = EfectoDestructivo.new 50
     @efectos[Estrella] = EfectoConstructivo.new 1
     @efectos[Misil] = EfectoDestructivo.new 80
-    @efectos[Nave] = EfectoDestructivo.new 100
+    @efectos[Nave] = EfectoDestructivoMutuo.new 100
     definir_estado
   end
 

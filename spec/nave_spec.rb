@@ -78,6 +78,15 @@ describe 'Nave' do
     expect(nave_1.vida).to eq 10
   end
 
+  it 'should hacerle perder 100 puntos de vida a la otra nave cuando colisiona con otra nave' do
+    nave_1 = Nave.new 110, 20
+    nave_2 = Nave.new 250, 15
+
+    nave_1.colisiona_con nave_2
+
+    expect(nave_2.vida).to eq 150
+  end
+
   it 'should perder 100 puntos de vida cuando colisiona con un misil' do
     nave = Nave.new 70, 20
     misil = Misil.new 100, 10
