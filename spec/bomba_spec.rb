@@ -96,6 +96,15 @@ describe 'Bomba' do
     expect(bomba_1.vida).to eq 0
   end
 
+  it 'should hacerle perder 100 puntos de vida a la otra nomba cuando colisiona con otra bomba' do
+    bomba_1 = Bomba.new 100, 50
+    bomba_2 = Bomba.new 150, 50
+
+    bomba_1.colisiona_con bomba_2
+
+    expect(bomba_2.vida).to eq 50
+  end
+
   it 'should perder el 100% de su vida cuando colisiona con un asteroide' do
     bomba = Bomba.new 250, 50
     asteroide = Asteroide.new 100, 100

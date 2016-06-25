@@ -11,7 +11,7 @@ class Bomba
     @efectos[Nave] = EfectoDestructivo.new 100
     @efectos[Estrella] = EfectoDestructivo.new 100
     @efectos[Misil] = EfectoDestructivoPorcentual.new 0.5
-    @efectos[Bomba] = EfectoDestructivo.new 100
+    @efectos[Bomba] = EfectoDestructivoMutuo.new 100
     definir_estado
   end
 
