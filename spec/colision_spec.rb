@@ -97,4 +97,15 @@ describe 'Colision' do
     expect(nave.vida).to eq 150
   end
 
+  #Ejemplo de consigna
+  it 'deberia quitarle toda la vida a la estrella que colisiona con una nave' do
+    nave = Nave.new
+    estrella = Estrella.new 50, 50
+    colision = Colision.new
+
+    colision.colisionar estrella, nave
+
+    expect(estrella.vida).to eq 0
+  end
+
 end
