@@ -286,4 +286,15 @@ describe 'Colision' do
     expect(bomba.vida).to eq 0
   end
 
+  #Ejemplo de consigna
+  it 'deberia no provocar cambios en la vida a un asteroide que colisiona con una bomba' do
+    bomba = Bomba.new 200, 100
+    asteroide = Asteroide.new 30, 100
+    colision = Colision.new
+
+    colision.colisionar bomba, asteroide
+
+    expect(asteroide.vida).to eq 30
+  end
+
 end
