@@ -1,7 +1,4 @@
 require_relative '../model/objeto_espacial'
-require_relative '../model/efecto_destructivo'
-require_relative '../model/efecto_destructivo_porcentual'
-require_relative '../model/efecto_destructivo_mutuo'
 
 class Bomba < ObjetoEspacial
 

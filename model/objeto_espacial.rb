@@ -1,3 +1,12 @@
+require_relative '../model/efecto_nulo'
+require_relative '../model/efecto_masa'
+require_relative '../model/efecto_constructivo'
+require_relative '../model/efecto_destructivo'
+require_relative '../model/efecto_destructivo_mutuo'
+require_relative '../model/efecto_destructivo_porcentual'
+require_relative '../model/efecto_destructivo_porcentual'
+require_relative '../model/efecto_destructivo_porcentual_mutuo'
+
 class ObjetoEspacial
 
     attr_accessor :vida, :masa
@@ -16,7 +25,7 @@ class ObjetoEspacial
         @vida = 100
         @masa = 100
       end
-      
+
       @esta_vivo = true if @esta_vivo.nil?
       @efectos = {}
     end

@@ -1,8 +1,4 @@
 require_relative '../model/objeto_espacial'
-require_relative '../model/efecto_masa'
-require_relative '../model/efecto_constructivo'
-require_relative '../model/efecto_destructivo'
-require_relative '../model/efecto_destructivo_mutuo'
 
 class Nave < ObjetoEspacial
 

@@ -1,8 +1,5 @@
 require 'rspec'
 require 'spec_helper'
-require_relative '../model/efecto_destructivo_porcentual_mutuo'
-require_relative '../model/estrella'
-require_relative '../model/misil'
 
 describe 'EfectoDestructivoPorcentualMutuo' do
 

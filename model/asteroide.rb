@@ -1,6 +1,4 @@
 require_relative '../model/objeto_espacial'
-require_relative '../model/efecto_nulo'
-require_relative '../model/efecto_masa'
 
 class Asteroide < ObjetoEspacial
 
