@@ -154,4 +154,12 @@ describe 'Estrella' do
     expect(estrella.efectos[Bomba]).to eq "cualquier_efecto"
   end
 
+  it 'deberia poder quitar objetos espaciales y efectos asociados' do
+    estrella = Estrella.new
+
+    estrella.quitar_colision Estrella
+
+    expect(estrella.efectos[Estrella]).to eq nil
+  end
+
 end
