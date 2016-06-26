@@ -145,4 +145,12 @@ describe 'Bomba' do
     expect(bomba.efectos[Nave]).to eq "cualquier_efecto"
   end
 
+  it 'deberia poder quitar objetos espaciales y efectos asociados' do
+    bomba = Bomba.new
+
+    bomba.quitar_colision Nave
+
+    expect(bomba.efectos[Nave]).to eq nil
+  end
+
 end
