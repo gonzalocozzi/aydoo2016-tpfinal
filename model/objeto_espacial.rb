@@ -1,13 +1,11 @@
 class ObjetoEspacial
 
-    attr_accessor :masa, :vida
+    attr_accessor :vida, :masa
     attr_reader :efectos, :esta_vivo
 
     #args[0] = vida
     #args[1] = masa
     def initialize(*args)
-      @esta_vivo = true if @esta_vivo.nil?
-      @efectos = {}
       #Ruby no permite sobrecargar metodos. Para evitar la ruptura de numerosas pruebas
       #  se implementa esta logica para soportar dos argumentos
       if args.length == 2
@@ -18,6 +16,9 @@ class ObjetoEspacial
         @vida = 100
         @masa = 100
       end
+      
+      @esta_vivo = true if @esta_vivo.nil?
+      @efectos = {}
     end
 
     def colisiona_con objeto_espacial
