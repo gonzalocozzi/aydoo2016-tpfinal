@@ -172,4 +172,12 @@ describe 'Misil' do
     expect(misil.efectos[Nave]).to eq "cualquier_efecto"
   end
 
+  it 'deberia poder quitar objetos espaciales y efectos asociados' do
+    misil = Misil.new
+
+    misil.quitar_colision Misil
+
+    expect(misil.efectos[Misil]).to eq nil
+  end
+
 end
