@@ -145,13 +145,4 @@ describe 'Bomba' do
     expect(bomba.efectos[Nave]).to eq "cualquier_efecto"
   end
 
-  it 'deberia indicar que la colision no ha sido definida con el objeto indicado' do
-    bomba_1 = Bomba.new
-    bomba_2 = Bomba.new
-
-    bomba_1.efectos.delete Bomba
-
-    expect{bomba_1.colisiona_con bomba_2}.to raise_error ColisionNoDefinidaError
-  end
-
 end

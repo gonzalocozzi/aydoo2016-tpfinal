@@ -1,5 +1,3 @@
-require_relative '../model/colision_no_definida_error'
-
 class ObjetoEspacial
 
     attr_accessor :masa, :vida
@@ -8,10 +6,10 @@ class ObjetoEspacial
     #args[0] = vida
     #args[1] = masa
     def initialize(*args)
-      @esta_vivo = true
-      @efectos = Hash.new
-      #Ruby no permite sobrecargar metodos. Para evitar la ruptura de numerosas pruebas...
-      #...se implementa esta logica para soportar multiples argumentos
+      @esta_vivo = true if @esta_vivo.nil?
+      @efectos = {}
+      #Ruby no permite sobrecargar metodos. Para evitar la ruptura de numerosas pruebas
+      #  se implementa esta logica para soportar multiples argumentos
       if args.length == 2
         @vida = args[0]
         @masa = args[1]
@@ -23,11 +21,7 @@ class ObjetoEspacial
     end
 
     def colisiona_con objeto_espacial
-      if !@efectos.key? objeto_espacial.class
-        fail ColisionNoDefinidaError.new
-      end
-
-      @efectos[objeto_espacial.class].aplicar_efecto self, objeto_espacial
+      @efectos.fetch(objeto_espacial.class).aplicar_efecto(self, objeto_espacial)
       definir_estado
     end
 
@@ -37,7 +31,7 @@ class ObjetoEspacial
 
     private
     #Esta estructura es sospechosa, pero no se encontro otra manera de poder analizar individualmente cada argumento
-    #Esto es necesario para evitar que se almacenen vidas o masas negativas
+    #  esto es necesario para evitar que se almacenen vidas o masas negativas
     def definir_estado
       if @vida <= 0
         @vida = 0

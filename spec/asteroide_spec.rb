@@ -172,13 +172,4 @@ describe 'Asteroide' do
     expect(asteroide.efectos[Misil]).to eq "cualquier_efecto"
   end
 
-  it 'deberia indicar que la colision no ha sido definida con el objeto indicado' do
-    asteroide = Asteroide.new
-    bomba = Bomba.new
-
-    asteroide.efectos.delete Bomba
-
-    expect{asteroide.colisiona_con bomba}.to raise_error ColisionNoDefinidaError
-  end
-
 end

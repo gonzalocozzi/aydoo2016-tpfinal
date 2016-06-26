@@ -154,13 +154,4 @@ describe 'Estrella' do
     expect(estrella.efectos[Bomba]).to eq "cualquier_efecto"
   end
 
-  it 'deberia indicar que la colision no ha sido definida con el objeto indicado' do
-    estrella = Estrella.new
-    misil = Misil.new
-
-    estrella.efectos.delete Misil
-
-    expect{estrella.colisiona_con misil}.to raise_error ColisionNoDefinidaError
-  end
-
 end
