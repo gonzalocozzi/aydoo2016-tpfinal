@@ -29,8 +29,12 @@ class ObjetoEspacial
       @efectos[objeto_espacial.class] = efecto
     end
 
+    def quitar_colision clave
+      @efectos = @efectos.delete_if { |k,v| k == clave }
+    end
+
     private
-    
+
     #Esta estructura es sospechosa, pero no se encontro otra manera de poder analizar individualmente cada argumento
     #  esto es necesario para evitar que se almacenen vidas o masas negativas
     def definir_estado

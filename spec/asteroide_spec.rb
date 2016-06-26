@@ -172,4 +172,12 @@ describe 'Asteroide' do
     expect(asteroide.efectos[Misil]).to eq "cualquier_efecto"
   end
 
+  it 'deberia poder quitar objetos espaciales y efectos asociados' do
+    asteroide = Asteroide.new
+
+    asteroide.quitar_colision Misil
+
+    expect(asteroide.efectos[Misil]).to eq nil
+  end
+
 end
