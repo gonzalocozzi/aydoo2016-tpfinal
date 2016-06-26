@@ -4,67 +4,67 @@ require_relative '../model/bomba'
 
 describe 'Bomba' do
 
-  it 'deberia almacenar vida desde su creacion' do
+  it 'deberia almacenar vida cuando se instancia el objeto' do
     bomba = Bomba.new 185, 50
 
     expect(bomba.vida).to eq 185
   end
 
-  it 'deberia almacenar masa desde su creacion' do
+  it 'deberia almacenar masa cuando se instancia el objeto' do
     bomba = Bomba.new 185, 50
 
     expect(bomba.masa).to eq 50
   end
 
-  it 'deberia tener 100 puntos de vida en su creacion' do
+  it 'deberia tener 100 puntos de vida cuando se instancia el objeto' do
     bomba = Bomba.new
 
     expect(bomba.vida).to eq 100
   end
 
-  it 'deberia tener 100 puntos de masa en su creacion' do
+  it 'deberia tener 100 puntos de masa cuando se instancia el objeto' do
     bomba = Bomba.new
 
     expect(bomba.masa).to eq 100
   end
 
-  it 'deberia contener un asteroide en un mapa desde su creacion' do
+  it 'deberia contener un asteroide en un mapa cuando se instancia el objeto' do
     bomba = Bomba.new 185, 50
 
     expect(bomba.efectos.key?(Asteroide)).to eq true
   end
 
-  it 'deberia contener una nave en un mapa desde su creacion' do
+  it 'deberia contener una nave en un mapa cuando se instancia el objeto' do
     bomba = Bomba.new 185, 50
 
     expect(bomba.efectos.key?(Nave)).to eq true
   end
 
-  it 'deberia contener una estrella en un mapa desde su creacion' do
+  it 'deberia contener una estrella en un mapa cuando se instancia el objeto' do
     bomba = Bomba.new 185, 50
 
     expect(bomba.efectos.key?(Estrella)).to eq true
   end
 
-  it 'deberia contener un misil en un mapa desde su creacion' do
+  it 'deberia contener un misil en un mapa cuando se instancia el objeto' do
     bomba = Bomba.new 185, 50
 
     expect(bomba.efectos.key?(Misil)).to eq true
   end
 
-  it 'deberia contener una bomba en un mapa desde su creacion' do
+  it 'deberia contener una bomba en un mapa cuando se instancia el objeto' do
     bomba = Bomba.new 185, 50
 
     expect(bomba.efectos.key?(Bomba)).to eq true
   end
 
-  it 'deberia no estar viva si su vida es nula' do
+  it 'deberia no estar viva cuando su vida es nula' do
     bomba = Bomba.new 0, 50
 
     expect(bomba.esta_vivo).to eq false
   end
 
-  it 'deberia no estar viva si su masa es nula' do
+  it 'deberia no estar viva cuando su masa es nula' do
     bomba = Bomba.new 30, 0
 
     expect(bomba.esta_vivo).to eq false

@@ -4,67 +4,67 @@ require_relative '../model/misil'
 
 describe 'Misil' do
 
-  it 'deberia almacenar vida desde su creacion' do
+  it 'deberia almacenar vida cuando se instancia el objeto' do
     misil = Misil.new 100, 45
 
     expect(misil.vida).to eq 100
   end
 
-  it 'deberia almacenar masa desde su creacion' do
+  it 'deberia almacenar masa cuando se instancia el objeto' do
     misil = Misil.new 100, 45
 
     expect(misil.masa).to eq 45
   end
 
-  it 'deberia tener 100 puntos de vida en su creacion' do
+  it 'deberia tener 100 puntos de vida cuando se instancia el objeto' do
     misil = Misil.new
 
     expect(misil.vida).to eq 100
   end
 
-  it 'deberia tener 100 puntos de masa en su creacion' do
+  it 'deberia tener 100 puntos de masa cuando se instancia el objeto' do
     misil = Misil.new
 
     expect(misil.masa).to eq 100
   end
 
-  it 'deberia contener un asteroide en un mapa desde su creacion' do
+  it 'deberia contener un asteroide en un mapa cuando se instancia el objeto' do
     misil = Misil.new 100, 20
 
     expect(misil.efectos.key?(Asteroide)).to eq true
   end
 
-  it 'deberia contener una bomba en un mapa desde su creacion' do
+  it 'deberia contener una bomba en un mapa cuando se instancia el objeto' do
     misil = Misil.new 100, 20
 
     expect(misil.efectos.key?(Bomba)).to eq true
   end
 
-  it 'deberia contener una estrella en un mapa desde su creacion' do
+  it 'deberia contener una estrella en un mapa cuando se instancia el objeto' do
     misil = Misil.new 100, 20
 
     expect(misil.efectos.key?(Estrella)).to eq true
   end
 
-  it 'deberia contener una nave en un mapa desde su creacion' do
+  it 'deberia contener una nave en un mapa cuando se instancia el objeto' do
     misil = Misil.new 100, 20
 
     expect(misil.efectos.key?(Nave)).to eq true
   end
 
-  it 'deberia contener un misil en un mapa desde su creacion' do
+  it 'deberia contener un misil en un mapa cuando se instancia el objeto' do
     misil = Misil.new 100, 20
 
     expect(misil.efectos.key?(Misil)).to eq true
   end
 
-  it 'deberia no estar vivo si su vida es nula' do
+  it 'deberia no estar vivo cuando su vida es nula' do
     misil = Misil.new 0, 20
 
     expect(misil.esta_vivo).to eq false
   end
 
-  it 'deberia no estar vivo si su masa es nula' do
+  it 'deberia no estar vivo cuando su masa es nula' do
     misil = Misil.new 60, 0
 
     expect(misil.esta_vivo).to eq false

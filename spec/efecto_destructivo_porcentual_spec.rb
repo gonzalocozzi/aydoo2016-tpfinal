@@ -4,7 +4,7 @@ require_relative '../model/efecto_destructivo_porcentual'
 
 describe 'EfectoDestructivoPorcentual' do
 
-  it 'deberia almacenar variacion que hara en la vida desde su creacion' do
+  it 'deberia almacenar variacion que hara en la vida cuando se instancia el objeto' do
     efecto_destructivo_porcentual = EfectoDestructivoPorcentual.new 0.3
 
     expect(efecto_destructivo_porcentual.variacion_de_atributo).to eq 0.3

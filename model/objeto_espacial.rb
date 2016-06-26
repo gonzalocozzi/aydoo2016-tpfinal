@@ -9,7 +9,7 @@ class ObjetoEspacial
       @esta_vivo = true if @esta_vivo.nil?
       @efectos = {}
       #Ruby no permite sobrecargar metodos. Para evitar la ruptura de numerosas pruebas
-      #  se implementa esta logica para soportar multiples argumentos
+      #  se implementa esta logica para soportar dos argumentos
       if args.length == 2
         @vida = args[0]
         @masa = args[1]
@@ -30,6 +30,7 @@ class ObjetoEspacial
     end
 
     private
+    
     #Esta estructura es sospechosa, pero no se encontro otra manera de poder analizar individualmente cada argumento
     #  esto es necesario para evitar que se almacenen vidas o masas negativas
     def definir_estado

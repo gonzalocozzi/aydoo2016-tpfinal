@@ -4,7 +4,7 @@ require_relative '../model/efecto_destructivo_mutuo'
 
 describe 'EfectoDestructivoMutuo' do
 
-  it 'deberia almacenar variacion que hara en la vida desde su creacion' do
+  it 'deberia almacenar variacion que hara en la vida cuando se instancia el objeto' do
     efecto_destructivo_mutuo = EfectoDestructivoMutuo.new 75
 
     expect(efecto_destructivo_mutuo.variacion_de_atributo).to eq 75

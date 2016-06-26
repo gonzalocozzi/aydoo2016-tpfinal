@@ -4,7 +4,7 @@ require_relative '../model/efecto_constructivo'
 
 describe 'EfectoConstructivo' do
 
-  it 'deberia almacenar variacion que hara en la vida desde su creacion' do
+  it 'deberia almacenar variacion que hara en la vida cuando se instancia el objeto' do
     efecto_constructivo = EfectoConstructivo.new 0.7
 
     expect(efecto_constructivo.variacion_de_atributo).to eq 0.7

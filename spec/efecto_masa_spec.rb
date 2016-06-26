@@ -4,7 +4,7 @@ require_relative '../model/efecto_masa'
 
 describe 'EfectoMasa' do
 
-  it 'deberia almacenar variacion que hara en la masa desde su creacion' do
+  it 'deberia almacenar variacion que hara en la masa cuando se instancia el objeto' do
     efecto_masa = EfectoMasa.new 1.2
 
     expect(efecto_masa.variacion_de_atributo).to eq 1.2

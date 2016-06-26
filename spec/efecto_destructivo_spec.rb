@@ -4,7 +4,7 @@ require_relative '../model/efecto_destructivo'
 
 describe 'EfectoDestructivo' do
 
-  it 'deberia almacenar variacion que hara en la masa desde su creacion' do
+  it 'deberia almacenar variacion que hara en la masa cuando se instancia el objeto' do
     efecto_destructivo = EfectoDestructivo.new 40
 
     expect(efecto_destructivo.variacion_de_atributo).to eq 40

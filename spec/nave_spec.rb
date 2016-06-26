@@ -4,67 +4,67 @@ require_relative '../model/nave'
 
 describe 'Nave' do
 
-  it 'deberia almacenar vida desde su creacion' do
+  it 'deberia almacenar vida cuando se instancia el objeto' do
     nave = Nave.new 100, 0
 
     expect(nave.vida).to eq 100
   end
 
-  it 'deberia almacenar masa desde su creacion' do
+  it 'deberia almacenar masa cuando se instancia el objeto' do
     nave = Nave.new 100, 20
 
     expect(nave.masa).to eq 20
   end
 
-  it 'deberia tener 100 puntos de vida en su creacion' do
+  it 'deberia tener 100 puntos de vida cuando se instancia el objeto' do
     nave = Nave.new
 
     expect(nave.vida).to eq 100
   end
 
-  it 'deberia tener 100 puntos de masa en su creacion' do
+  it 'deberia tener 100 puntos de masa cuando se instancia el objeto' do
     nave = Nave.new
 
     expect(nave.masa).to eq 100
   end
 
-  it 'deberia contener un asteroide en un mapa desde su creacion' do
+  it 'deberia contener un asteroide en un mapa cuando se instancia el objeto' do
     nave = Nave.new 100, 20
 
     expect(nave.efectos.key?(Asteroide)).to eq true
   end
 
-  it 'deberia contener una bomba en un mapa desde su creacion' do
+  it 'deberia contener una bomba en un mapa cuando se instancia el objeto' do
     nave = Nave.new 100, 20
 
     expect(nave.efectos.key?(Bomba)).to eq true
   end
 
-  it 'deberia contener una estrella en un mapa desde su creacion' do
+  it 'deberia contener una estrella en un mapa cuando se instancia el objeto' do
     nave = Nave.new 100, 20
 
     expect(nave.efectos.key?(Estrella)).to eq true
   end
 
-  it 'deberia contener un misil en un mapa desde su creacion' do
+  it 'deberia contener un misil en un mapa cuando se instancia el objeto' do
     nave = Nave.new 100, 20
 
     expect(nave.efectos.key?(Misil)).to eq true
   end
 
-  it 'deberia contener una nave en un mapa desde su creacion' do
+  it 'deberia contener una nave en un mapa cuando se instancia el objeto' do
     nave = Nave.new 100, 20
 
     expect(nave.efectos.key?(Nave)).to eq true
   end
 
-  it 'deberia no estar viva si su vida es nula' do
+  it 'deberia no estar viva cuando su vida es nula' do
     nave = Nave.new 0, 20
 
     expect(nave.esta_vivo).to eq false
   end
 
-  it 'deberia no estar viva si su masa es nula' do
+  it 'deberia no estar viva cuando su masa es nula' do
     nave = Nave.new 10, 0
 
     expect(nave.esta_vivo).to eq false
