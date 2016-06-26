@@ -7,11 +7,12 @@ class Estrella < ObjetoEspacial
   def initialize(*args)
     super *args
     #Los efectos con parametro 0 no provocan cambios en el misil
-    @efectos[Misil] = EfectoDestructivo.new 0
+    efecto_nulo = EfectoDestructivo.new 0
+    @efectos[Misil] = efecto_nulo
     @efectos[Asteroide] = EfectoDestructivoPorcentual.new 1
     @efectos[Bomba] = EfectoDestructivoPorcentual.new 1
     @efectos[Nave] = EfectoDestructivoPorcentual.new 1
-    @efectos[Estrella] = EfectoDestructivoPorcentualMutuo.new 1    
+    @efectos[Estrella] = EfectoDestructivoPorcentualMutuo.new 1
   end
 
 end
