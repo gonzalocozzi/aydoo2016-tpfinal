@@ -1,4 +1,7 @@
 require_relative '../model/objeto_espacial'
+require_relative '../model/efecto_nulo'
+require_relative '../model/efecto_destructivo_porcentual'
+require_relative '../model/efecto_destructivo_porcentual_mutuo'
 
 class Estrella < ObjetoEspacial
 
@@ -6,9 +9,7 @@ class Estrella < ObjetoEspacial
   #args[1] = masa
   def initialize(*args)
     super *args
-    #Los efectos con parametro 0 no provocan cambios en el misil
-    efecto_nulo = EfectoDestructivo.new 0
-    @efectos[Misil] = efecto_nulo
+    @efectos[Misil] = EfectoNulo.new
     @efectos[Asteroide] = EfectoDestructivoPorcentual.new 1
     @efectos[Bomba] = EfectoDestructivoPorcentual.new 1
     @efectos[Nave] = EfectoDestructivoPorcentual.new 1

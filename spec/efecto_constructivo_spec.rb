@@ -1,6 +1,8 @@
 require 'rspec'
 require 'spec_helper'
 require_relative '../model/efecto_constructivo'
+require_relative '../model/asteroide'
+require_relative '../model/bomba'
 
 describe 'EfectoConstructivo' do
 

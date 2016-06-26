@@ -1,6 +1,11 @@
 require 'rspec'
 require 'spec_helper'
 require_relative '../model/colision'
+require_relative '../model/asteroide'
+require_relative '../model/bomba'
+require_relative '../model/estrella'
+require_relative '../model/misil'
+require_relative '../model/nave'
 
 describe 'Colision' do
 
@@ -423,7 +428,7 @@ describe 'Colision' do
     estrella = Estrella.new
     colision = Colision.new
 
-    expect {colision.colisionar nave, estrella}.to raise_error ObjetoSinVidaError 
+    expect {colision.colisionar nave, estrella}.to raise_error ObjetoSinVidaError
   end
 
 end

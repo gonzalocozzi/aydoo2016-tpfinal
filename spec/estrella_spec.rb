@@ -1,6 +1,10 @@
 require 'rspec'
 require 'spec_helper'
+require_relative '../model/asteroide'
+require_relative '../model/bomba'
 require_relative '../model/estrella'
+require_relative '../model/misil'
+require_relative '../model/nave'
 
 describe 'Estrella' do
 
