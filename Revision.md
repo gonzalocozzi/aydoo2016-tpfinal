@@ -14,7 +14,7 @@
 * Observacion 3: En las clases del dominio (los objetos espaciales) no es evidente porque se agregan "efectos" con parametro 0.
 * Concepto afectado: tiene "smell" no es claro el codigo.
 * Sugerencia: agregar los comentarios correspondientes.
-* Aceptado: se incorporan comentarios a las clases aclarando el funcionamiento de los efectos, y se agregan comentarios a los efectos detallando el uso de los parámetros.
+* Aceptado: se agregan comentarios a los efectos detallando el uso de los parámetros. Además, se reemplazaron los efectos con parámetros nulos por la clase 'EfectoNulo'.
 
 * Observacion 4: En las clases del dominio (los objetos espaciales) el metodo definir_estado tiene un if debajo del otro.
 * Concepto afectado: claridad, serie de if.
